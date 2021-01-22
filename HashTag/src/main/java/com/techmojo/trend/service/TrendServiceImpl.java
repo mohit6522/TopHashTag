@@ -10,14 +10,15 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.techmojo.trend.domain.LRUCache;
+import com.techmojo.trend.domain.Cache;
 import com.techmojo.trend.domain.Tag;
+
 
 @Service
 public class TrendServiceImpl implements TrendService {
 	
 	@Autowired
-	LRUCache cache;
+	Cache cache;
 
 	@Override
 	public boolean parseString(String text) {

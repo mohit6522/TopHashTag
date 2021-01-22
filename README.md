@@ -15,6 +15,8 @@ The count is tracked in memory only (If you restart the server, you will loose t
 
 # Approach
 
+DataStructure Used: LinkedHashMap and PriorityQueue(min-heap)
+
 Maintain a cache using LinkedHashMap. The LinkedHashMap will maintain top 50 recently used tweets with the value(Tag Object).
 The Tag object has 2 fields : tag(String) and value(Integer). **tag** is the keyword being tracked and **value** is the number of times it has been used.
 

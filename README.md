@@ -2,7 +2,7 @@
 Track top 10 hashtags based on input string
 
 This a small and simple tool to keep track of hashtags(tweets/posts) and maintain most frequently used words(top 10 in here).
-To run this clone/download the project. Install the maven dependency and start the spring boot(tomcat) server or alternatively build the jar and deploy it on any server.
+To run this clone/download the project. Install the maven dependencies and start the spring boot(tomcat) server or alternatively build the jar and deploy it on any server.
 Once deployed, On UI hit **[http://localhost:5000/swagger-ui.html#!]** . This will open the Swagger UI where the exposed APIs can be easily accessed.
 
 The Application exposes two APIs:

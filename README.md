@@ -15,14 +15,14 @@ The count is tracked in memory only (If you restart the server, you will loose t
 
 # Approach
 
-Maintain a LRU cache using LinkedHashSet and HashMap. The LinkedHashSet will maintain top 50 recently used tweets where as HashMap will contain the value(Tag Object).
+Maintain a cache using LinkedHashMap. The LinkedHashMap will maintain top 50 recently used tweets with the value(Tag Object).
 The Tag object has 2 fields : tag(String) and value(Integer). **tag** is the keyword being tracked and **value** is the number of times it has been used.
 
 We maintain a priority queue with type Tag and custom comparator on it. This will act like min-heap and will maintain top 10 trends.
-Another Hashset is maintained to effectively avoid the duplicate entried in the priority queue.
+Another Hashset is maintained to effectively avoid the duplicate entries in the priority queue.
 
-The HashMap values and PriorityQueue share same address or reference. So when a keyword come through its updated in the map(which will also update in the priority queue because of shared reference)
-and then checked for in the HashSet. If the keyword already exists, the queue is not altered. If not, then there is comparison between the top of the queue and the keyword value.
-This might result in heapify if the keyword value is more than the minimum value on priority queue.
+The LinkedHashMap values and PriorityQueue share same address or reference. So when a keyword come through and its updated in the map, it will also be updated in the priority queue because of shared reference.
+
+If the value is more than the top of min heap then its checked in HashSet. If the keyword already exists, the queue is not altered. If not, then the top of the queue is polled and replaced by the new Tag Object.
 
 [http://localhost:5000/swagger-ui.html#!]: http://localhost:5000/swagger-ui.html#!

@@ -11,7 +11,7 @@ The Application exposes two APIs:
 2. To display top 10 used tags based on input string (GET)
 
 The **POST** request uses regex matching to identify a **#** and its end inside a string.
-The count is tracked in memory only (If you restart the server, you will loose them). This can be improved by async pushing the priority queue object to H2 db(local filesystem) or any other database.
+The count is tracked in memory only (If you restart the server, you will loose them). This can be improved by async pushing the priority queue data to H2 db(local filesystem) or any other database.
 
 # Approach
 
